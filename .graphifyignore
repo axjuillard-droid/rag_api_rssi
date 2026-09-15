@@ -1,0 +1,16 @@
+# Dépendances et caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.git/
+.streamlit/
+graphify-out/
+
+# Documents et fichiers texte (pour un corpus uniquement composé de code, sans clé API)
+*.md
+*.txt
+*.html
+*.yml
+*.yaml
+*.json
