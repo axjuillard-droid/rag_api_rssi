@@ -1,5 +1,58 @@
 # 🛡️ CISO RAG Assistant — Graphify & Gemini
 
+## 📸 Aperçu de l'Application
+
+**CISO RAG Assistant** est une application web locale d'analyse architecturale et d'audit de sécurité pour RSSI. Elle combine un **graphe de dépendances** généré par [Graphify](https://github.com/graphify) avec la puissance du LLM **Google Gemini** pour permettre à n'importe quel responsable sécurité d'interroger la structure interne d'une application en langage naturel — **sans jamais lire directement le code source**.
+
+Le workflow est simple :
+1. **Pointez** l'application vers un dossier contenant les sorties Graphify (`graphify-out/`).
+2. **Chargez** le graphe de dépendances du projet cible.
+3. **Dialoguez** avec l'assistant pour obtenir un audit de sécurité, identifier les points critiques et recevoir des recommandations concrètes.
+
+---
+
+### 🗺️ Graphe de Connaissance (Graphify)
+
+> Le graphe de dépendances analysé par l'assistant. Chaque nœud représente un composant (fichier, classe, fonction) et chaque lien une relation de dépendance. Les **God Nodes** — composants hautement connectés et donc critiques — sont identifiés visuellement par leur taille et leur position centrale dans le graphe.
+
+![Graphe de connaissance généré par Graphify](exemple graphe de connaissance.png)
+
+---
+
+### 💬 Dialogue RAG — Questions / Réponses Sécurité
+
+> L'espace de dialogue permet de poser des questions en langage naturel sur l'architecture et les risques de sécurité. Ici, l'assistant identifie les **principaux risques cybersécurité** du projet analysé : centralisation des accès SQLite, surface d'attaque étendue via l'API principale, God Nodes critiques, etc. L'analyse est purement architecturale et ne lit pas le code ligne par ligne.
+
+![Exemple de question-réponse sur les risques cybersécurité](exemple de question réponse.png)
+
+---
+
+### 📋 Recommandations Générales pour le RSSI
+
+> À la suite de chaque analyse, l'assistant formule des **recommandations concrètes et actionnables** : audit des God Nodes prioritaires, validation des relations inférées, sécurisation des points d'entrée API, gestion des jetons, contrôle des imports/exports CSV, et refactoring des communautés à faible cohésion.
+
+![Suite de l'exemple avec les recommandations](suite exemple avec recommandation.png)
+
+---
+
+### 🔍 Audit de la Surface d'Attaque
+
+> L'onglet dédié à la surface d'attaque liste automatiquement les **fichiers critiques** du projet, classés par score de criticité et niveau de risque (🔴 Élevé, 🟠 Moyen, 🟡 Faible). Pour chaque fichier, les raisons de criticité sont détaillées (accès SQLite, connexions réseau, God Node, gestion de tokens, etc.) ainsi que les composants clés classés par connectivité (degré).
+
+![Audit de la surface d'attaque](surface d'attaque.png)
+
+---
+
+### 🛠️ Stack Technique & Dépendances
+
+> L'onglet Stack Technique extrait et catégorise automatiquement l'ensemble des technologies détectées dans le projet analysé : langages (JavaScript, Python, TypeScript, PowerShell), bases de données (SQLite), frameworks UI (React, Tailwind CSS, Vite) et bibliothèques tierces NPM. Le tableau de bord affiche en temps réel les métriques clés du graphe chargé (ici : **384 nœuds**, **810 relations**, **53 fichiers scannés**, point critique principal : `get_db_connection()`).
+
+![Stack technique et dépendances détectées](stack technique.png)
+
+---
+
+
+
 > **Assistant RAG d'analyse d'architecture logicielle & d'audit de sécurité pour RSSI et équipes Cybersécurité.**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
