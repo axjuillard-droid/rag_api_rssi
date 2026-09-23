@@ -15,7 +15,7 @@ Le workflow est simple :
 
 > Le graphe de dépendances analysé par l'assistant. Chaque nœud représente un composant (fichier, classe, fonction) et chaque lien une relation de dépendance. Les **God Nodes** — composants hautement connectés et donc critiques — sont identifiés visuellement par leur taille et leur position centrale dans le graphe.
 
-![Graphe de connaissance généré par Graphify](exemple graphe de connaissance.png)
+![Graphe de connaissance généré par Graphify](exemple%20graphe%20de%20connaissance.png)
 
 ---
 
@@ -23,7 +23,7 @@ Le workflow est simple :
 
 > L'espace de dialogue permet de poser des questions en langage naturel sur l'architecture et les risques de sécurité. Ici, l'assistant identifie les **principaux risques cybersécurité** du projet analysé : centralisation des accès SQLite, surface d'attaque étendue via l'API principale, God Nodes critiques, etc. L'analyse est purement architecturale et ne lit pas le code ligne par ligne.
 
-![Exemple de question-réponse sur les risques cybersécurité](exemple de question réponse.png)
+![Exemple de question-réponse sur les risques cybersécurité](exemple%20de%20question%20r%C3%A9ponse.png)
 
 ---
 
@@ -31,7 +31,7 @@ Le workflow est simple :
 
 > À la suite de chaque analyse, l'assistant formule des **recommandations concrètes et actionnables** : audit des God Nodes prioritaires, validation des relations inférées, sécurisation des points d'entrée API, gestion des jetons, contrôle des imports/exports CSV, et refactoring des communautés à faible cohésion.
 
-![Suite de l'exemple avec les recommandations](suite exemple avec recommandation.png)
+![Suite de l'exemple avec les recommandations](suite%20exemple%20avec%20recommandation.png)
 
 ---
 
@@ -39,7 +39,7 @@ Le workflow est simple :
 
 > L'onglet dédié à la surface d'attaque liste automatiquement les **fichiers critiques** du projet, classés par score de criticité et niveau de risque (🔴 Élevé, 🟠 Moyen, 🟡 Faible). Pour chaque fichier, les raisons de criticité sont détaillées (accès SQLite, connexions réseau, God Node, gestion de tokens, etc.) ainsi que les composants clés classés par connectivité (degré).
 
-![Audit de la surface d'attaque](surface d'attaque.png)
+![Audit de la surface d'attaque](surface%20d'attaque.png)
 
 ---
 
@@ -47,7 +47,7 @@ Le workflow est simple :
 
 > L'onglet Stack Technique extrait et catégorise automatiquement l'ensemble des technologies détectées dans le projet analysé : langages (JavaScript, Python, TypeScript, PowerShell), bases de données (SQLite), frameworks UI (React, Tailwind CSS, Vite) et bibliothèques tierces NPM. Le tableau de bord affiche en temps réel les métriques clés du graphe chargé (ici : **384 nœuds**, **810 relations**, **53 fichiers scannés**, point critique principal : `get_db_connection()`).
 
-![Stack technique et dépendances détectées](stack technique.png)
+![Stack technique et dépendances détectées](stack%20technique.png)
 
 ---
 
